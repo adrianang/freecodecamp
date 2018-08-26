@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#img-div {
+    width: 40vw;
+    height: 100vh;
+    position: fixed;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#tribute-info {
+    width: 55vw;
+    height: auto;
+    position: absolute;
+    right: 2vw;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+
+#tribute-info p {
+    padding: 12px 0 0 0;
+}
+
+#tribute-info > div {
+    padding: 0 0 50px 0;
+}
+
+#members {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.member-container {
+    width: 100%;
+    padding: 15px 0 0 0;
+}
+
+.member-container img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-container-info {
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+    padding: 0 0 0 10px;
+}
+
+.member-container-info ul{
+    margin: 0 0 0 20px;
+}
+
+.singles-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.singles-row-container {
+    display: flex;
+    position: relative;
+    width: 32%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0 0 0;
+}
+
+
+.singles-row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: pink;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.overlay-text {
+    position: absolute;
+    opacity: 1;
+}
