@@ -58,6 +58,15 @@ p, li {
     object-fit: cover;
 }
 
+#img-caption {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    background-color: #FFFFFF;
+    color: #F22566;
+    padding: 5px;
+}
+
 #tribute-info {
     width: 55vw;
     height: auto;
@@ -97,7 +106,7 @@ p, li {
 .member-container-info {
     display: inline-block;
     vertical-align: top;
-    width: 75%;
+    width: 70%;
     height: auto;
     padding: 0 0 0 10px;
 }
@@ -162,7 +171,50 @@ p, li {
     text-decoration: underline;
 }
 
-
-/* .overlay-text a:link {
+.tribute-link {
+    font-family: "Kosugi Maru";
+    color: #F22566;
     text-decoration: none;
-} */
+}
+
+.tribute-link:hover {
+    text-decoration: underline;
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    #img-div {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    #image {
+        position: absolute;
+        max-width: 100%;
+        height: auto;
+        transform: translateY(-44%);
+    }
+
+    #img-caption {
+        bottom: 10px;
+        margin: auto;
+    }
+
+    #tribute-info {
+        width: 90vw;
+        margin: 20px 0 0 0;
+    }
+}
+
+@media (max-width: 728px) {
+    .member-container-info {
+        width: 60%;
+    }
+
+    .singles-row-container {
+        width: 100%;
+    }
+}
