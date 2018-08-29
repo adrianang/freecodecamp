@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+
+<body>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/The_native_form_widgets -->
+    <h1 id="title">Boba Order Form</h1>
+    <p id="description">An online form to order boba.</p>
+
+    <form id="survey-form">
+        <label id="name-label">Name <input type="text" id="name" placeholder="Name" required></label>
+        <label id="email-label">E-mail <input type="email" id="email" placeholder="E-mail" required></label>
+        <label id="number-label">Quantity <input type="number" id="number" min="0" max="99" placeholder="Number (from 0-99)" required></label>
+
+        <select id="dropdown">
+            <option>Black Milk Tea</option>
+            <option>Jasmine Milk Tea</option>
+        </select>
+
+        <fieldset>
+            <label>100%</label>
+            <input type="radio" name="ice" value="100%">
+
+            <label>50%</label>
+            <input type="radio" name="ice" value="50%">
+        </fieldset>
+
+        <fieldset>
+            <label>Taro</label>
+            <input type="checkbox" name="flavor" value="taro">
+
+            <label>Lychee</label>
+            <input type="checkbox" name="flavor" value="lychee">
+        </fieldset>
+
+        <textarea></textarea>
+        <button type="submit" id="submit">Place Order</button>
+    </form>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
