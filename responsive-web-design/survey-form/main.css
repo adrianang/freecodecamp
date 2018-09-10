@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    display: inline-block;
+}
+
+fieldset {
+    position: relative;
+}
+
+#main-container {
+    width: 80%;
+    margin: auto;
+}
+
+#main-container-grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#contact-info label {
+    display: block;
+}
+
+#contact-info input, #dropdown, textarea {
+    display: block;
+}
+
+.fieldset-grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+}
+
+/* .contact-info-field > select {
+    align-self: stretch;
+} */
+
+#sweetness-values {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+#sweetness-values input {
+    display: block;
+    float: right;
+}
+
+@media (max-width: 996px) {
+    #main-container-grid {
+        display: block;
+    }
+}

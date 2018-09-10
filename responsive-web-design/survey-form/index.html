@@ -3,42 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
     <!-- https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/The_native_form_widgets -->
-    <h1 id="title">Boba Order Form</h1>
-    <p id="description">An online form to order boba.</p>
+    <div id="main-container">
+        <div id="main-container-grid">
+            <div id="main-container-grid-sidebar">
+                <h1 id="title">Boba Order Form</h1>
+                <p id="description">An online form to order boba.</p>
+            </div>
 
-    <form id="survey-form">
-        <label id="name-label">Name <input type="text" id="name" placeholder="Name" required></label>
-        <label id="email-label">E-mail <input type="email" id="email" placeholder="E-mail" required></label>
-        <label id="number-label">Quantity <input type="number" id="number" min="0" max="99" placeholder="Number (from 0-99)" required></label>
+            <form id="survey-form">
+                <fieldset id="contact-info">
+                    <div class="fieldset-grid">
+                        <label id="name-label">Name</label> <input type="text" id="name" placeholder="Name" required>
+                    </div>
 
-        <select id="dropdown">
-            <option>Black Milk Tea</option>
-            <option>Jasmine Milk Tea</option>
-        </select>
+                    <div class="fieldset-grid">
+                        <label id="email-label">E-mail</label> <input type="email" id="email" placeholder="E-mail" required>
+                    </div>
 
-        <fieldset>
-            <label>100%</label>
-            <input type="radio" name="ice" value="100%">
+                    <div class="fieldset-grid">
+                        <label id="number-label">Quantity</label> <input type="number" id="number" min="0" max="99" placeholder="Number (from 0-99)" required>
+                    </div>
+                </fieldset>
 
-            <label>50%</label>
-            <input type="radio" name="ice" value="50%">
-        </fieldset>
+                <fieldset id="base-tea">
+                    <div class="fieldset-grid">
+                        <h2>Base Tea</h2>
+                        <select id="dropdown">
+                            <option>Black Milk Tea</option>
+                            <option>Jasmine Milk Tea</option>
+                            <option>Oolong Milk Tea</option>
+                        </select>
+                    </div>
+                </fieldset>
 
-        <fieldset>
-            <label>Taro</label>
-            <input type="checkbox" name="flavor" value="taro">
+                <fieldset>
+                    <div class="fieldset-grid">
+                        <h2>Flavors</h2>
+                        <div id="flavors">
+                            <label>Taro</label>
+                            <input type="checkbox" name="flavor" value="taro">
 
-            <label>Lychee</label>
-            <input type="checkbox" name="flavor" value="lychee">
-        </fieldset>
+                            <label>Lychee</label>
+                            <input type="checkbox" name="flavor" value="lychee">
+                            
+                            <label>Honeydew</label>
+                            <input type="checkbox" name="flavor" value="honeydew">
+                        </div>
+                    </div>
+                </fieldset>
 
-        <textarea></textarea>
-        <button type="submit" id="submit">Place Order</button>
-    </form>
+                <fieldset id="sweetness">
+                    <div class="fieldset-grid">
+                        <h2>Sweetness Level</h2>
+                        <div id="sweetness-values">
+                            <div>
+                                <label>100%</label>
+                                <input type="radio" name="ice" value="100%">
+                            </div>
+
+                            <div>
+                                <label>75%</label>
+                                <input type="radio" name="ice" value="75%">
+                            </div>
+
+                            <div>
+                                <label>50%</label>
+                                <input type="radio" name="ice" value="50%">
+                            </div>
+
+                            <div>
+                                <label>25%</label>
+                                <input type="radio" name="ice" value="25%">
+                            </div>
+
+                            <div>
+                                <label>0%</label>
+                                <input type="radio" name="ice" value="25%">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="fieldset-grid">
+                        <h2>Additional Notes</h2>
+                        <textarea></textarea>
+                    </div>
+                </fieldset>
+                <button type="submit" id="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
