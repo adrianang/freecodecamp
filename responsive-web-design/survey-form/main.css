@@ -60,6 +60,11 @@ input:focus::-webkit-input-placeholder {
     justify-content: space-evenly;
 }
 
+#main-container-grid-sidebar img {
+    width: 80%;
+    margin: 15px 0 0 0;
+}
+
 #contact-info label {
     display: block;
 }
@@ -164,6 +169,10 @@ input:focus::-webkit-input-placeholder {
 
     #main-container-grid-sidebar {
         margin: 0 0 35px 0;
+    }
+
+    #main-container-grid-sidebar img {
+        display: none;
     }
 }
 
