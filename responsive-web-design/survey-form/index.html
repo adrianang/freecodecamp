@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <title>FreshTea Online Drink Order Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
@@ -11,12 +12,13 @@
     <div id="main-container">
         <div id="main-container-grid">
             <div id="main-container-grid-sidebar">
-                <h1 id="title">Boba Order Form</h1>
-                <p id="description">An online form to order boba.</p>
+                <h1 id="title">FreshTea Drink Order Form</h1>
+                <p id="description">Order your boba drink using our online form; pick-up in-store at FreshTea only.</p>
             </div>
 
             <form id="survey-form">
                 <fieldset id="contact-info">
+                    <h2>Contact</h2>
                     <div class="fieldset-grid">
                         <label id="name-label">Name</label> <input type="text" id="name" placeholder="Name" required>
                     </div>
@@ -34,9 +36,11 @@
                     <div class="fieldset-grid">
                         <h2>Base Tea</h2>
                         <select id="dropdown">
-                            <option>Black Milk Tea</option>
-                            <option>Jasmine Milk Tea</option>
-                            <option>Oolong Milk Tea</option>
+                            <option>Black Tea</option>
+                            <option>Jasmine Tea</option>
+                            <option>Oolong Tea</option>
+                            <option>Green Tea</option>
+                            <option>Earl Grey Tea</option>
                         </select>
                     </div>
                 </fieldset>
@@ -45,14 +49,77 @@
                     <div class="fieldset-grid">
                         <h2>Flavors</h2>
                         <div id="flavors">
-                            <label>Taro</label>
-                            <input type="checkbox" name="flavor" value="taro">
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0b66f3666ed1e759f7268763770e979f&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Taro</label>
+                                <input type="checkbox" name="flavor" value="taro">
+                            </div>
 
-                            <label>Lychee</label>
-                            <input type="checkbox" name="flavor" value="lychee">
-                            
-                            <label>Honeydew</label>
-                            <input type="checkbox" name="flavor" value="honeydew">
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1531673775053-4ddac9a53cd1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=de42ea315669f73d1378afafa502b0f2&auto=format&fit=crop&w=889&q=80">
+                                </div>
+                                <label>Strawberry</label>
+                                <input type="checkbox" name="flavor" value="strawberry">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1528826234716-96aaa8e9a413?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3704adeb255b464345bb0c2bfd169577&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Honeydew</label>
+                                <input type="checkbox" name="flavor" value="honeydew">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d8e375fc7d4f22be53ff1ecd81571499&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Guava</label>
+                                <input type="checkbox" name="flavor" value="guava">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1521624002551-9ea092b0bc52?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9d3180f31423922e28f8f9b73ea95a5d&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Kiwi</label>
+                                <input type="checkbox" name="flavor" value="kiwi">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1525423235703-6c285d74010e?ixlib=rb-0.3.5&s=fb8445051288b58d31cbbede2c780415&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Watermelon</label>
+                                <input type="checkbox" name="flavor" value="watermelon">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1515472297483-9d89d39c85e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=478da09ce0bcd2c3e5f4d775d11ddbe1&auto=format&fit=crop&w=779&q=80">
+                                </div>
+                                <label>Hazelnut</label>
+                                <input type="checkbox" name="flavor" value="hazelnut">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1519096845289-95806ee03a1a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f3901af88cefacdb5722280d03413096&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Mango</label>
+                                <input type="checkbox" name="flavor" value="mango">
+                            </div>
+
+                            <div class="flavors-div">
+                                <div class="img-container">
+                                    <img src="https://images.unsplash.com/photo-1518707750169-15fe1eaed69f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ffdc39eab6551b72042f2d5c0df20360&auto=format&fit=crop&w=750&q=80">
+                                </div>
+                                <label>Almond</label>
+                                <input type="checkbox" name="flavor" value="almond">
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -61,27 +128,27 @@
                     <div class="fieldset-grid">
                         <h2>Sweetness Level</h2>
                         <div id="sweetness-values">
-                            <div>
+                            <div class="sweetness-values-div">
                                 <label>100%</label>
                                 <input type="radio" name="ice" value="100%">
                             </div>
 
-                            <div>
+                            <div class="sweetness-values-div">
                                 <label>75%</label>
                                 <input type="radio" name="ice" value="75%">
                             </div>
 
-                            <div>
+                            <div class="sweetness-values-div">
                                 <label>50%</label>
                                 <input type="radio" name="ice" value="50%">
                             </div>
 
-                            <div>
+                            <div class="sweetness-values-div">
                                 <label>25%</label>
                                 <input type="radio" name="ice" value="25%">
                             </div>
 
-                            <div>
+                            <div class="sweetness-values-div">
                                 <label>0%</label>
                                 <input type="radio" name="ice" value="25%">
                             </div>

@@ -1,24 +1,63 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Oxygen', sans-serif; 
+    --freshtea-main-color: #A2C242;
+    --freshtea-secondary-color: #414066;
+}
+
+h1 {
+    color: var(--freshtea-main-color);
+    line-height: 1.15;
 }
 
 h2 {
+    color: var(--freshtea-secondary-color);
     display: inline-block;
 }
 
 fieldset {
     position: relative;
+    margin: 0 0 15px 0;
+    border: 0;
+}
+
+fieldset::after {
+    display: block;
+    border-bottom: 0.8px solid var(--freshtea-main-color);
+    width: 100%;
+    content: '';
+    margin: auto;
+    padding: 20px 0 0px 0;
+}
+
+input, textarea, select {
+    padding: 5px 10px;
+    border: 2px solid var(--freshtea-main-color);
+    border-radius: 10px;
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    background-color: var(--freshtea-main-color);
+    color: #FFFFFF;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #FFFFFF;
 }
 
 #main-container {
     width: 80%;
     margin: auto;
+    padding: 25px 0 0 0;
 }
 
 #main-container-grid {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 30% 60%;
+    justify-content: space-evenly;
 }
 
 #contact-info label {
@@ -29,15 +68,42 @@ fieldset {
     display: block;
 }
 
+#number {
+    width: 40%;
+    justify-self:  end;
+}
+
 .fieldset-grid {
     display: grid;
     grid-template-columns: 40% 60%;
     align-items: center;
+    padding: 0 0 5px 0;
 }
 
-/* .contact-info-field > select {
-    align-self: stretch;
-} */
+#flavors {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between; 
+}
+
+.flavors-div {
+    position: relative;
+    width: 100%;
+    padding: 5px 0 0 0;
+}
+
+.flavors-div > input {
+    position: absolute;
+    right: 0;
+    padding: 5px 0 0 0;
+    vertical-align: bottom;
+}
+
+.flavors-div > label {
+    padding: 5px 0 0 0;
+}
 
 #sweetness-values {
     display: grid;
@@ -51,8 +117,77 @@ fieldset {
     float: right;
 }
 
+.sweetness-values-div {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+.sweetness-values-div label {
+    padding: 0 0 4px 0;
+}
+
+.img-container {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding: 0 0 3px 0;
+}
+
+.img-container > img {
+    height: 100%;
+}
+
+#submit {
+    background-color: #FFFFFF;
+    border: 2px solid var(--freshtea-main-color);
+    border-radius: 6px;
+    color: var(--freshtea-main-color);
+    float: right;
+    padding: 10px;
+    margin: 0 0 75px 0;
+    outline: none;
+}
+
+#submit:hover {
+    background-color: var(--freshtea-main-color);
+    color: #FFFFFF;
+    transition: background-color 0.5s ease, color 0.5s ease; 
+}
+
 @media (max-width: 996px) {
     #main-container-grid {
         display: block;
+    }
+
+    #main-container-grid-sidebar {
+        margin: 0 0 35px 0;
+    }
+}
+
+@media (max-width: 700px) {
+    #flavors {
+        grid-template-columns: 48% 48%;
+    }
+}
+
+@media (max-width: 400px) {
+    h2 {
+        margin: 0 0 5px 0;
+    }
+    
+    .fieldset-grid {
+        grid-template-columns: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    #flavors {
+        grid-template-columns: 100%;
+    }
+
+    .img-container {
+        display: none;
     }
 }
