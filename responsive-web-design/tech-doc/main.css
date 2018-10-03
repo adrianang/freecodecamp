@@ -1,27 +1,40 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    /* font-family: 'Open Sans'; */
     --tech-doc-color-main: #19A7FF;
-    --block-margin: 0 0 20px 0;
+    --tech-doc-color-secondary: #FED61F;
+    --tech-doc-font-header: 'Crete Round';
+    --tech-doc-font-body: 'Open Sans';
+    --block-margin: 0 50px 20px 50px;
 }
 
 main {
-    margin: 0 0 0 250px;
+    margin: 0 30px 0 275px;
+    padding: 20px 0 0 0;
+    font-family: var(--tech-doc-font-body);
 }
 
-header {
+section header {
     color: var(--tech-doc-color-main);
-    margin: 15px 0 5px 0;
+    margin: 45px 0 15px 0;
+    font-family: var(--tech-doc-font-header);
+    font-size: 1.65em;
+}
+
+section:last-child {
+    padding: 0 0 50px 0;
 }
 
 p {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
 }
 
 code {
     white-space: pre-line;
     font-family: monospace;
+    background-color: lightcyan;
+    padding: 2px;
 }
 
 .code-block, .list-block {
@@ -29,25 +42,67 @@ code {
     margin: var(--block-margin);
 }
 
-.list-block {
-    padding: 0 0 0 50px; 
+.code-block {
+    padding: 0 0 14px 10px;
+}
+
+.underline {
+    background-image: linear-gradient(var(--tech-doc-color-secondary), var(--tech-doc-color-secondary));
+    background-position: 0 1.1em;
+    background-repeat: repeat-x;
+    background-size: 1px 3px;
+    text-shadow: -3px 0px 0 #FFFFFF, 3px 0px 0 #FFFFFF, 0px -1px 0 #FFFFFF;
+}
+
+.credit-line {
+    font-size: 0.75em;
+    line-height: 0.5;
 }
 
 #navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 250px;
+    padding: 20px 0 0 0;
+    overflow: auto;
+    height: 100%;
+    font-family: var(--tech-doc-font-body);
+    background-color: var(--tech-doc-color-main);
+    scroll-behavior: smooth; /* limited browser support at the moment */
+}
+
+#navbar header {
+    margin: 0 0 0 10px;
+    padding: 0 0 20px 0;
+    color: #FFFFFF;
+    font-family: var(--tech-doc-font-header);
+    font-size: 2.25em;
 }
 
 #navbar a {
     display: block;
-    padding: 0 0 5px 0;
+    padding: 15px 0 15px 10px;
+    border-top: 1px solid; 
+    color: #FFFFFF;
+    transition: border-top 0.25s ease;
+}
+
+#navbar a:link {
+    text-decoration: none;
+}
+
+#navbar a:active {
+    color: var(--tech-doc-color-main);
 }
 
 #navbar a:hover {
-    padding-left: 30px;
-    transition: padding-left 0.25s ease;
+    color: var(--tech-doc-color-secondary);
+    border-left: 10px solid var(--tech-doc-color-secondary);
+    transition: border-left 0.25s ease;
 }
 
+#navbar header .underline {
+    text-shadow: -3px 0px 0 var(--tech-doc-color-main), 3px 0px 0 var(--tech-doc-color-main), 0px -2px 0 var(--tech-doc-color-main);
+}
 /* media queries are in head of .html file to pass test */

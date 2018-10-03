@@ -3,24 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Technical Documentation Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <style>
         @media only screen and (max-width: 850px) {
             main {
-                margin: 0;
+                width: 88%;
+                margin: auto;
             }
         
             #navbar {
                 position: relative;
+                display: block;
+                width: 88%;
+                margin: auto;
+                background-color: #FFFFFF;
             }
+
+            #navbar header {
+                color: var(--tech-doc-color-main);
+            }
+
+            #navbar header .underline {
+                text-shadow: 0 0 0 #FFFFFF;
+            }
+
+            #navbar a {
+                display: inline-block;
+                width: 45%;
+                color: var(--tech-doc-color-main);
+            }
+
+            #navbar a:last-child {
+                width: 90%;
+            }
+
         }
     </style>
 </head>
 
 <body>
     <nav id="navbar">
-        <header>Regular Expressions</header>
+        <header><span class="underline">Regular Expressions</span></header>
         <a href="#Creating_a_Regular_Expression" class="nav-link">Creating a Regular Expression</a>
         <a href="#Testing_for_Matches" class="nav-link">Testing for Matches</a>
         <a href="#Sets_of_Characters" class="nav-link">Sets of Characters</a>
@@ -36,7 +61,7 @@
         <p>Regular expressions are both terribly awkward and extremely useful. Their syntax is cryptic, and the programming interface JavaScript provides for them is clumsy. But they are a powerful tool for inspecting and processing strings. Properly understanding regular expressions will make you a more effective programmer.</p>
 
         <section class="main-section" id="Creating_a_Regular_Expression">
-            <header>Creating a Regular Expression</header>
+            <header><span class="underline">Creating a Regular Expression</span></header>
 
             <p>A regular expression is a type of object. It can be either constructed with the <code>RegExp</code> constructor or written as a literal value by enclosing a pattern in forward slash (<code>/</code>) characters.</p>
 
@@ -57,7 +82,7 @@
         </section>
         
         <section class="main-section" id="Testing_for_Matches">
-            <header>Testing for Matches</header>
+            <header><span class="underline">Testing for Matches</span></header>
             
             <p>Regular expression objects have a number of methods. The simplest one is <code>test</code>. If you pass it a string, it will return a Boolean telling you whether the string contains a match of the pattern in the expression.</p>
 
@@ -72,7 +97,7 @@
         </section>
         
         <section class="main-section" id="Sets_of_Characters">
-            <header>Sets of Characters</header>
+            <header><span class="underline">Sets of Characters</span></header>
 
             <p>Finding out whether a string contains abc could just as well be done with a call to <code>indexOf</code>. Regular expressions allow us to express more complicated patterns.</p>
             
@@ -127,7 +152,7 @@
         </section>
         
         <section class="main-section" id="Repeating_Parts_of_a_Pattern">
-            <header>Repeating Parts of a Pattern</header>
+            <header><span class="underline">Repeating Parts of a Pattern</span></header>
             
             <p>We now know how to match a single digit. What if we want to match a whole number—a sequence of one or more digits?</p>
 
@@ -170,7 +195,7 @@
         </section>
 
         <section class="main-section" id="Grouping_Subexpressions">
-            <header>Grouping Subexpressions</header>
+            <header><span class="underline">Grouping Subexpressions</span></header>
 
             <p>To use an operator like <code>*</code> or <code>+</code> on more than one element at a time, you have to use parentheses. A part of a regular expression that is enclosed in parentheses counts as a single element as far as the operators following it are concerned.</p>
 
@@ -183,6 +208,8 @@
             <p>The first and second <code>+</code> characters apply only to the second o in <code>boo</code> and <code>hoo</code>, respectively. The third <code>+</code> applies to the whole group <code>(hoo+)</code>, matching one or more sequences like that.</p>
 
             <p>The <code>i</code> at the end of the expression in the example makes this regular expression case insensitive, allowing it to match the uppercase B in the input string, even though the pattern is itself all lowercase.</p>
+
+            <span class="credit-line">All information from <a href="https://eloquentjavascript.net/09_regexp.html">Eloquent JavaScript, Chapter 9: Regular Expressions</a>. The information taken for this project is only a portion of the chapter; I recommend visiting the link for the rest of the chapter. Thank you Marijn Haverbeke!</span> 
         </section>    
     </main>
 
