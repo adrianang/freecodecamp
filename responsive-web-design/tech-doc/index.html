@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Technical Documentation Page</title>
-    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Open+Sans" rel="stylesheet">
+    <title>Chapter 9: Regular Expressions</title>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Open+Sans|Ubuntu+Mono" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <style>
-        @media only screen and (max-width: 850px) {
+        @media only screen and (max-width: 768px) {
             main {
                 width: 88%;
                 margin: auto;
@@ -26,18 +26,20 @@
             }
 
             #navbar header .underline {
-                text-shadow: 0 0 0 #FFFFFF;
+                text-shadow: -3px 0px 0 #FFFFFF, 0 0 0 #FFFFFF, 3px 0px 0 #FFFFFF;
             }
 
             #navbar a {
-                display: inline-block;
-                width: 45%;
+                /* position: absolute; */
+                display: block;
+                width: 95%;
                 color: var(--tech-doc-color-main);
+                overflow: hidden;
             }
 
-            #navbar a:last-child {
-                width: 90%;
-            }
+            /* #navbar a:last-child {
+                width: 95%;
+            } */
 
         }
     </style>
@@ -56,7 +58,7 @@
     <main id="main-doc">
         <p>Programming tools and techniques survive and spread in a chaotic, evolutionary way. It’s not always the pretty or brilliant ones that win but rather the ones that function well enough within the right niche or that happen to be integrated with another successful piece of technology.</p>
 
-        <p>In this chapter, I will discuss one such tool, regular expressions. Regular expressions are a way to describe patterns in string data. They form a small, separate language that is part of JavaScript and many other languages and systems.</p>
+        <p>In this chapter, I will discuss one such tool, <i>regular expressions</i>. Regular expressions are a way to describe patterns in string data. They form a small, separate language that is part of JavaScript and many other languages and systems.</p>
 
         <p>Regular expressions are both terribly awkward and extremely useful. Their syntax is cryptic, and the programming interface JavaScript provides for them is clumsy. But they are a powerful tool for inspecting and processing strings. Properly understanding regular expressions will make you a more effective programmer.</p>
 
@@ -66,18 +68,18 @@
             <p>A regular expression is a type of object. It can be either constructed with the <code>RegExp</code> constructor or written as a literal value by enclosing a pattern in forward slash (<code>/</code>) characters.</p>
 
             <code class="code-block">
-                let re1 = new RegExp("abc");
-                let re2 = /abc/;
+                <span class="code-block-const">let</span> <span class="code-block-varname">re1</span> = <span class="code-block-const">new</span> RegExp(<span class="code-block-string">"abc"</span>);
+                <span class="code-block-const">let</span> <span class="code-block-varname">re2</span> = <span class="code-block-string">/abc/</span>;
             </code>
 
-            <p>Both of those regular expression objects represent the same pattern: an a character followed by a b followed by a c.</p>
+            <p>Both of those regular expression objects represent the same pattern: an <i>a</i> character followed by a <i>b</i> followed by a <i>c</i>.</p>
 
             <p>When using the <code>RegExp</code> constructor, the pattern is written as a normal string, so the usual rules apply for backslashes.</p>
             
-            <p>The second notation, where the pattern appears between slash characters, treats backslashes somewhat differently. First, since a forward slash ends the pattern, we need to put a backslash before any forward slash that we want to be part of the pattern. In addition, backslashes that aren’t part of special character codes (like \n) will be preserved, rather than ignored as they are in strings, and change the meaning of the pattern. Some characters, such as question marks and plus signs, have special meanings in regular expressions and must be preceded by a backslash if they are meant to represent the character itself.</p>
+            <p>The second notation, where the pattern appears between slash characters, treats backslashes somewhat differently. First, since a forward slash ends the pattern, we need to put a backslash before any forward slash that we want to be <i>part</i> of the pattern. In addition, backslashes that aren’t part of special character codes (like <code>\n</code>) will be <i>preserved</i>, rather than ignored as they are in strings, and change the meaning of the pattern. Some characters, such as question marks and plus signs, have special meanings in regular expressions and must be preceded by a backslash if they are meant to represent the character itself.</p>
 
             <code class="code-block">
-                let eighteenPlus = /eighteen\+/;
+                <span class="code-block-const">let</span> <span class="code-block-varname">eighteenPlus</span> = <span class="code-block-string">/eighteen\+/</span>;
             </code>
         </section>
         
@@ -87,29 +89,29 @@
             <p>Regular expression objects have a number of methods. The simplest one is <code>test</code>. If you pass it a string, it will return a Boolean telling you whether the string contains a match of the pattern in the expression.</p>
 
             <code class="code-block">
-                console.log(/abc/.test("abcde"));
-                // → true
-                console.log(/abc/.test("abxde"));
-                // → false
+                console.log(<span class="code-block-string">/abc/</span>.test(<span class="code-block-string">"abcde"</span>));
+                <span class="code-block-comment">// → true</span>
+                console.log(<span class="code-block-string">/abc/</span>.test(<span class="code-block-string">"abxde"</span>));
+                <span class="code-block-comment">// → false</span>
             </code>
 
-            <p>A regular expression consisting of only nonspecial characters simply represents that sequence of characters. If abc occurs anywhere in the string we are testing against (not just at the start), <code>test</code> will return <code>true</code>.</p>
+            <p>A regular expression consisting of only nonspecial characters simply represents that sequence of characters. If <i>abc</i> occurs anywhere in the string we are testing against (not just at the start), <code>test</code> will return <code>true</code>.</p>
         </section>
         
         <section class="main-section" id="Sets_of_Characters">
             <header><span class="underline">Sets of Characters</span></header>
 
-            <p>Finding out whether a string contains abc could just as well be done with a call to <code>indexOf</code>. Regular expressions allow us to express more complicated patterns.</p>
+            <p>Finding out whether a string contains <i>abc</i> could just as well be done with a call to <code>indexOf</code>. Regular expressions allow us to express more complicated patterns.</p>
             
             <p>Say we want to match any number. In a regular expression, putting a set of characters between square brackets makes that part of the expression match any of the characters between the brackets.</p>
 
             <p>Both of the following expressions match all strings that contain a digit:</p>
 
             <code class="code-block">
-                console.log(/[0123456789]/.test("in 1992"));
-                // → true
-                console.log(/[0-9]/.test("in 1992"));
-                // → true
+                console.log(<span class="code-block-string">/[0123456789]/</span>.test(<span class="code-block-string">"in 1992"</span>));
+                <span class="code-block-comment">// → true</span>
+                console.log(<span class="code-block-string">/[0-9]/</span>.test(<span class="code-block-string">"in 1992"</span>));
+                <span class="code-block-comment">// → true</span>
             </code>
 
             <p>Within square brackets, a hyphen (<code>-</code>) between two characters can be used to indicate a range of characters, where the ordering is determined by the character’s Unicode number. Characters 0 to 9 sit right next to each other in this ordering (codes 48 to 57), so <code>[0-9]</code> covers all of them and matches any digit.</p>
@@ -129,25 +131,25 @@
             <p>So you could match a date and time format like 01-30-2003 15:20 with the following expression:</p>
             
             <code class="code-block">
-                let dateTime = /\d\d-\d\d-\d\d\d\d \d\d:\d\d/;
-                console.log(dateTime.test("01-30-2003 15:20"));
-                // → true
-                console.log(dateTime.test("30-jan-2003 15:20"));
-                // → false
+                <span class="code-block-const">let</span> <span class="code-block-varname">dateTime</span> = <span class="code-block-string">/\d\d-\d\d-\d\d\d\d \d\d:\d\d/</span>;
+                console.log(dateTime.test(<span class="code-block-string">"01-30-2003 15:20"</span>));
+                <span class="code-block-comment">// → true</span>
+                console.log(dateTime.test(<span class="code-block-string">"30-jan-2003 15:20"</span>));
+                <span class="code-block-comment">// → false</span>
             </code>
             
             <p>That looks completely awful, doesn’t it? Half of it is backslashes, producing a background noise that makes it hard to spot the actual pattern expressed. We’ll see a slightly improved version of this expression later.</p>
 
             <p>These backslash codes can also be used inside square brackets. For example, <code>[\d.]</code> means any digit or a period character. But the period itself, between square brackets, loses its special meaning. The same goes for other special characters, such as <code>+</code>.</p>
 
-            <p>To invert a set of characters—that is, to express that you want to match any character except the ones in the set—you can write a caret (<code>^</code>) character after the opening bracket.</p>
+            <p>To <i>invert</i> a set of characters—that is, to express that you want to match any character <i>except</i> the ones in the set—you can write a caret (<code>^</code>) character after the opening bracket.</p>
 
             <code class="code-block">
-                let notBinary = /[^01]/;
-                console.log(notBinary.test("1100100010100110"));
-                // → false
-                console.log(notBinary.test("1100100010200110"));
-                // → true
+                <span class="code-block-const">let</span> <span class="code-block-varname">notBinary</span> = <span class="code-block-string">/[^01]/</span>;
+                console.log(notBinary.test(<span class="code-block-string">"1100100010100110"</span>));
+                <span class="code-block-comment">// → false</span>
+                console.log(notBinary.test(<span class="code-block-string">"1100100010200110"</span>));
+                <span class="code-block-comment">// → true</span>
             </code>
         </section>
         
@@ -159,26 +161,26 @@
             <p>When you put a plus sign (<code>+</code>) after something in a regular expression, it indicates that the element may be repeated more than once. Thus, <code>/\d+/</code> matches one or more digit characters.</p>
 
             <code class="code-block">
-                console.log(/'\d+'/.test("'123'"));
-                // → true
-                console.log(/'\d+'/.test("''"));
-                // → false
-                console.log(/'\d*'/.test("'123'"));
-                // → true
-                console.log(/'\d*'/.test("''"));
-                // → true
+                console.log(<span class="code-block-string">/'\d+'/</span>.test(<span class="code-block-string">"'123'"</span>));
+                <span class="code-block-comment">// → true</span>
+                console.log(<span class="code-block-string">/'\d+'/</span>.test(<span class="code-block-string">"''"</span>));
+                <span class="code-block-comment">// → false</span>
+                console.log(<span class="code-block-string">/'\d*'/</span>.test(<span class="code-block-string">"'123'"</span>));
+                <span class="code-block-comment">// → true</span>
+                console.log(<span class="code-block-string">/'\d*'/</span>.test(<span class="code-block-string">"''"</span>));
+                <span class="code-block-comment">// → true</span>
             </code>
             
             <p>The star (<code>*</code>) has a similar meaning but also allows the pattern to match zero times. Something with a star after it never prevents a pattern from matching—it’ll just match zero instances if it can’t find any suitable text to match.</p>
 
-            <p>A question mark makes a part of a pattern optional, meaning it may occur zero times or one time. In the following example, the u character is allowed to occur, but the pattern also matches when it is missing.</p>
+            <p>A question mark makes a part of a pattern <i>optional</i>, meaning it may occur zero times or one time. In the following example, the <i>u</i> character is allowed to occur, but the pattern also matches when it is missing.</p>
 
             <code class="code-block">
-                let neighbor = /neighbou?r/;
-                console.log(neighbor.test("neighbour"));
-                // → true
-                console.log(neighbor.test("neighbor"));
-                // → true
+                <span class="code-block-const">let</span> <span class="code-block-varname">neighbor</span> = <span class="code-block-string">/neighbou?r/</span>;
+                console.log(neighbor.test(<span class="code-block-string">"neighbour"</span>));
+                <span class="code-block-comment">// → true</span>
+                console.log(neighbor.test(<span class="code-block-string">"neighbor"</span>));
+                <span class="code-block-comment">// → true</span>
             </code>
 
             <p>To indicate that a pattern should occur a precise number of times, use braces. Putting <code>{4}</code> after an element, for example, requires it to occur exactly four times. It is also possible to specify a range this way: <code>{2,4}</code> means the element must occur at least twice and at most four times.</p>
@@ -186,9 +188,9 @@
             <p>Here is another version of the date and time pattern that allows both single- and double-digit days, months, and hours. It is also slightly easier to decipher.</p>
 
             <code class="code-block">
-                let dateTime = /\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/;
-                console.log(dateTime.test("1-30-2003 8:45"));
-                // → true
+                <span class="code-block-const">let</span> <span class="code-block-varname">dateTime</span> = <span class="code-block-string">/\d{1,2}-\d{1,2}-\d{4} \d{1,2}:\d{2}/</span>;
+                console.log(dateTime.test(<span class="code-block-string">"1-30-2003 8:45"</span>));
+                <span class="code-block-comment">// → true</span>
             </code>
             
             <p>You can also specify open-ended ranges when using braces by omitting the number after the comma. So, <code>{5,}</code> means five or more times.</p>
@@ -200,16 +202,16 @@
             <p>To use an operator like <code>*</code> or <code>+</code> on more than one element at a time, you have to use parentheses. A part of a regular expression that is enclosed in parentheses counts as a single element as far as the operators following it are concerned.</p>
 
             <code class="code-block">
-                let cartoonCrying = /boo+(hoo+)+/i;
-                console.log(cartoonCrying.test("Boohoooohoohooo"));
-                // → true
+                <span class="code-block-const">let</span> <span class="code-block-varname">cartoonCrying</span> = <span class="code-block-string">/boo+(hoo+)+/i</span>;
+                console.log(cartoonCrying.test(<span class="code-block-string">"Boohoooohoohooo"</span>));
+                <span class="code-block-comment">// → true</span>
             </code>
 
-            <p>The first and second <code>+</code> characters apply only to the second o in <code>boo</code> and <code>hoo</code>, respectively. The third <code>+</code> applies to the whole group <code>(hoo+)</code>, matching one or more sequences like that.</p>
+            <p>The first and second <code>+</code> characters apply only to the second <i>o</i> in <i>boo</i> and <i>hoo</i>, respectively. The third <code>+</code> applies to the whole group <code>(hoo+)</code>, matching one or more sequences like that.</p>
 
-            <p>The <code>i</code> at the end of the expression in the example makes this regular expression case insensitive, allowing it to match the uppercase B in the input string, even though the pattern is itself all lowercase.</p>
+            <p>The <code>i</code> at the end of the expression in the example makes this regular expression case insensitive, allowing it to match the uppercase <i>B</i> in the input string, even though the pattern is itself all lowercase.</p>
 
-            <span class="credit-line">All information from <a href="https://eloquentjavascript.net/09_regexp.html">Eloquent JavaScript, Chapter 9: Regular Expressions</a>. The information taken for this project is only a portion of the chapter; I recommend visiting the link for the rest of the chapter. Thank you Marijn Haverbeke!</span> 
+            <span class="credit-line">All information from <a class="underline" href="https://eloquentjavascript.net/09_regexp.html">Eloquent JavaScript, Chapter 9: Regular Expressions</a>. The information taken for this project is only a portion of the chapter; I recommend visiting the link for the rest of the chapter (and the rest of the book). Thank you Marijn Haverbeke for your contributions to JavaScript learning!</span> 
         </section>    
     </main>
 

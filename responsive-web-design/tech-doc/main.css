@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    /* font-family: 'Open Sans'; */
     --tech-doc-color-main: #19A7FF;
     --tech-doc-color-secondary: #FED61F;
     --tech-doc-font-header: 'Crete Round';
@@ -13,6 +12,15 @@ main {
     margin: 0 30px 0 275px;
     padding: 20px 0 0 0;
     font-family: var(--tech-doc-font-body);
+}
+
+main p {
+    font-size: 1em;
+}
+
+main code {
+    font-size: 1.05em;
+    line-height: 1.25;
 }
 
 section header {
@@ -32,8 +40,7 @@ p {
 
 code {
     white-space: pre-line;
-    font-family: monospace;
-    background-color: lightcyan;
+    font-family: 'Ubuntu Mono', monospace;
     padding: 2px;
 }
 
@@ -46,6 +53,30 @@ code {
     padding: 0 0 14px 10px;
 }
 
+.code-block-const {
+    color: var(--tech-doc-color-main);
+}
+
+.code-block-varname {
+    color: var(--tech-doc-color-secondary);
+}
+
+.code-block-string {
+    color: #8CD600;
+}
+
+.code-block-comment {
+    color: #F08700;
+}
+
+.list-block {
+    list-style: none;
+}
+
+.list-block code {
+    margin: 0 10px 0 0;
+}
+
 .underline {
     background-image: linear-gradient(var(--tech-doc-color-secondary), var(--tech-doc-color-secondary));
     background-position: 0 1.1em;
@@ -55,8 +86,26 @@ code {
 }
 
 .credit-line {
-    font-size: 0.75em;
-    line-height: 0.5;
+    display: inline-block;
+    font-style: italic;
+    border-top: 1px solid var(--tech-doc-color-main);
+    padding: 30px 0 0 0;
+    margin: 20px 0 0 0;
+    color: var(--tech-doc-color-main);
+}
+
+.credit-line a:link {
+    color: var(--tech-doc-color-main);
+    text-decoration: none;
+}
+
+.credit-line a:hover {
+    color: var(--tech-doc-color-secondary);
+    font-style: normal;
+}
+
+.credit-line a:visited {
+    color: gray;
 }
 
 #navbar {
