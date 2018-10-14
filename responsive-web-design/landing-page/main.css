@@ -2,26 +2,38 @@
     margin: 0;
     padding: 0;
     --section-height: 500px;
+    --horiz-padding-distance: 30px;
 }
 
 header {
     position: fixed;
-    background-color: #000000;
+    background-color: #FFFFFF;
     width: 100%;
     height: 64px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between; /* change this */
+    justify-content: space-between;
     align-items: center;
     z-index: 5;
 }
 
+header img {
+    width: auto;
+    height: 48px;
+    padding: 0 0 0 var(--horiz-padding-distance);
+}
+
+nav {
+    display: block;
+}
+
+nav a {
+    padding: 0 var(--horiz-padding-distance) 0 0;
+}
+
 section {
     height: var(--section-height);
-};
-
-.nav-link {
-} 
+}
 
 .img-container, .vid-container {
     overflow: hidden;
@@ -29,7 +41,14 @@ section {
 
 .img-container img {
     width: auto;
-    height: 100vh;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.content-container {
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
 }
 
 #lead-section {
@@ -40,21 +59,26 @@ section {
 
 #lead-section .img-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 #overlay {
     position: absolute;
-    width: 30%;
+    width: 350px;
     height: 200%;
     border: 4px solid burlywood;
-    background-color: salmon;
     top: 40%;
     left: 100px;
 }
 
+#overlay h1 {
+    font-size: 5.5em;
+    color: #FFFFFF;
+}
+
 .subpoint-section {
     display: flex;
+    width: 100%;
 }
 
 .subpoint-section .img-container {
@@ -63,15 +87,26 @@ section {
     background-color: burlywood;
 }
 
-#blurb-section {
-    display: flex;
-    justify-content: space-evenly;
+.subpoint-section .content-container {
+    width: 60%;
+    padding: 0 var(--horiz-padding-distance) 0 var(--horiz-padding-distance);
 }
 
-#blurb-section div {
+#blurb-section h2 {
+    padding: 0 0 0 var(--horiz-padding-distance);
+}
+
+#blurb-section-container {
+    height: 100%;
+    padding: 0 var(--horiz-padding-distance) 0 var(--horiz-padding-distance);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#blurb-section-container .content-container {
     width: 22.5%;
     height: 100%;
-    background-color: lightsalmon;
 }
 
 #video-section {
@@ -80,6 +115,10 @@ section {
     justify-content: space-between;
     align-items: center;
     align-content: center;
+}
+
+#video-section .content-container {
+    padding: 0 var(--horiz-padding-distance) 0 var(--horiz-padding-distance);
 }
 
 #video-section .vid-container {
@@ -97,6 +136,9 @@ section {
     transform: scale(2);
 }
 
+.fa {
+    font-size: 4em;
+}
 
 /* move following code to style section of html file before finalizing, to pass tests */
 /* @media only screen and (max-width: 768px) {

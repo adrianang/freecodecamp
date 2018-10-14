@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Landing Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <style>
@@ -21,9 +22,9 @@
 
 <body>
     <header id="header">
-        <img id="header-img" src="http://placekitten.com/300/64" alt="New Zealand">
+        <img id="header-img" src="http://static.newzealand.com/visit/images/linktonz/nzcom-black-on-white-logo.png" alt="New Zealand">
         <nav id="nav-bar">
-            <a class="nav-link" href="#header-img">one</section></a>
+            <a class="nav-link" href="#lead-section">one</a>
             <a class="nav-link" href="#blurb-section">two</a>
             <a class="nav-link" href="#video-section">three</a>
         </nav>
@@ -35,32 +36,72 @@
         </div>
 
         <div id="overlay">
-                <h1>New Zealand</h1>
+            <h1>Visit New Zealand</h1>
         </div>
     </section>
 
     <section class="subpoint-section">
         <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=83cdff79d02f25b7c6aae4318558f9fb&auto=format&fit=crop&w=751&q=80">
+        </div>
+
+        <div class="content-container">
+            <h2>Paradise of the Pacific</h2>
+            <p>New Zealand is a country of stunning and diverse natural beautify: jagged mountains, rolling pasture land, steep fiords, pristine trout-filled lakes, raging rivers, scenic beaches, and active volcanic zones.</p>
         </div>
     </section>
 
     <section class="subpoint-section">
         <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1491986926302-149ec463b90a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f34dc245ab45d60718efaa50bcdecee1&auto=format&fit=crop&w=751&q=80">
+        </div>
+
+        <div class="content-container">
+            <h2>Aotearoa</h2>
+            <p>Māori culture continues to play an important part in everyday life and government and corporate symbolism with abundant opportunities for visitors to understand and experience both the history and present day forms of Māori life.</p>
         </div>
     </section>
 
     <section id="blurb-section">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <h2>Experience New Zealand</h2>
+
+        <div id="blurb-section-container">        
+            <div class="content-container">
+                <i class="fa fa-cutlery"></i>
+                <h3>Dine</h3>
+                <p>Eat at some of the finest restaurants and eateries that New Zealand has to offer--fit for any foodie!</p>
+            </div>
+
+            <div class="content-container">
+                <i class="fa fa-tree"></i>
+                <h3>Adventure</h3>
+                <p>Exhilarate yourself by climbing steep heights, or witness picturesque landscape views in New Zealand.</p>
+            </div>
+
+            <div class="content-container">
+                <i class="fa fa-bed"></i>
+                <h3>Relax</h3>
+                <p>Get some much-needed R&R in the country's most serene hotels and resorts. Whether you're looking for something more tranquil or something with more activities, you'll find something to make you feel rejuvenated.</p>
+            </div>
+
+            <div class="content-container">
+                <i class="fa fa-flag"></i>
+                <h3>Learn</h3>
+                <p>Take some time to learn about New Zealand's rich history and experience a bit of the rich culture itself at various places in the country.</p>
+            </div>
+        </div>
     </section>
 
     <section id="video-section">
-        <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
-            <input id="email" type="email" name="email" placeholder="E-mail address">
-            <input id="submit" type="submit">
-        </form>   
+        <div class="content-container">
+            <h2>Ready to go?</h2>
+            <p>Enter your e-mail below to get started with your New Zealand journey.</p>
+
+            <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+                <input id="email" type="email" name="email" placeholder="E-mail address">
+                <input id="submit" type="submit">
+            </form>
+        </div>
 
         <div class="vid-container">
             <iframe src="https://www.youtube.com/embed/fHCemviY06Y?rel=0&autoplay=1&mute=1&showinfo=0&controls=0&disablekb=1&loop=1&playlist=fHCemviY06Y&modestbranding=1&vq=1080" id="video"></iframe>
