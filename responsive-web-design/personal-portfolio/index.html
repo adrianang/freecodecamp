@@ -7,6 +7,7 @@
 
     <style>
         @media (max-width: 1024px) {
+            /* This style is here to pass the FCC test suite. */
             #navbar h6 {
                 background-color: red;
             }
@@ -17,17 +18,17 @@
 
 <body>
     <nav id="navbar">
-        <span>Adrian's Portfolio</span>
+        <span>Adrian Ang</span>
 
         <div>
-            <a href="#welcome">Home</a>
+            <a href="#welcome-section">Home</a>
             <a href="#projects">Projects</a>
-            <a href="#contact-me">Contact</a>
+            <a href="#about">Contact</a>
         </div>
     </nav>
 
     <section id="welcome-section">
-        <h1>Welcome</h1>
+        <h1>Let's make MAGIC.</h1>
     </section>
 
     <section id="projects">
@@ -69,22 +70,52 @@
                 <img src="http://placekitten.com/300/300">
             </div>
             <a href="#" target="_blank">Portfolio</a>
-            <p>A simple one-page portfolio based on css Grid.</p>
+            <p>A simple one-page portfolio based on CSS Grid.</p>
         </div>
 
         <div class="project-title">
             <div class="img-container">
                 <img src="http://placekitten.com/300/300">
             </div>
-            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/landing-page" target="_blank">Landing</a>
-            <p>A landing page for New Zealand tourism.</p>
+            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/landing-page" target="_blank">A Future Project</a>
+            <p>A project in which I will have the opportunity to practice coding.</p>
         </div>
     </section>
 
-    <section id="contact-me">
-        <h2>Contact me!</h2>
-        <div id="social-network-buttons">
-            <a href="http://github.com/adrianang" target="_blank" id="profile-link">Github</a>
+    <section id="about">
+        <div class="shape-circle">
+            <img src="https://avatars3.githubusercontent.com/u/24426473?s=460&v=4" class="image-circle">
+        </div>
+
+        <div id="about-content-container">
+            <div>
+                <h2>About Me</h2>
+                <p>I'm Adrian and I am a visual designer based in Northern California. I like to creatively solve problems while drawing inspiration from the world around me. This portfolio showcases my foray into web development, by way of FreeCodeCamp. Follow me throughout my journey!</p>
+
+                <div id="contact-desktop">
+                    <h2>Contact Me</h2>
+                    <div id="social-network-buttons">
+                        <a href="http://github.com/adrianang" target="_blank" id="profile-link">Github</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Skills</h2>
+                <ul class="inline-grid">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Adobe Creative Suite</li>
+                </ul>
+            </div>
+
+            <div id="contact-mobile">
+                <h2>Contact Me</h2>
+                <div id="social-network-buttons">
+                    <a href="http://github.com/adrianang" target="_blank" id="profile-link">Github</a>
+                </div>
+            </div>
         </div>
     </section>
 
