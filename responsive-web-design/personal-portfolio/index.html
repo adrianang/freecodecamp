@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Overpass" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <style>
@@ -18,7 +20,7 @@
 
 <body>
     <nav id="navbar">
-        <span>Adrian Ang</span>
+        <span class="link-hover"><a href="http://adrianang.github.io/freecodecamp/responsive-web-design/personal-portfolio#welcome/">Adrian Ang</a></span>
 
         <div>
             <a href="#welcome-section">Home</a>
@@ -28,57 +30,51 @@
     </nav>
 
     <section id="welcome-section">
-        <h1>Let's make MAGIC.</h1>
+        <h1>Let's make <span class="link-hover">magic</span>.</h1>
     </section>
 
     <section id="projects">
         <h2 class="span-column-title">Projects</h2>
         <div class="project-title">
             <div class="img-container">
-                <img src="http://placekitten.com/300/300">
+                <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/tribute-page"><img src="media/tribute.png"></a>
             </div>
-            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/tribute-page" target="_blank">Tribute</a>
+            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/tribute-page" target="_blank" class="link-hover">Tribute</a>
             <p>A tribute to Korean pop girl group IOI.</p>
         </div>
 
         <div class="project-title">
             <div class="img-container">
-                <img src="http://placekitten.com/300/300">
+                <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/survey-form"><img src="media/survey.png"></a>
             </div>
-            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/survey-form" target="_blank">Form</a>
+            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/survey-form" target="_blank" class="link-hover">Form</a>
             <p>An online ordering form for a boba shop.</p>
         </div>
 
         <div class="project-title">
             <div class="img-container">
-                <img src="http://placekitten.com/300/300">
+                <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/landing-page">
+                <img src="media/landing.png"></a>
             </div>
-            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/landing-page" target="_blank">Landing</a>
+            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/landing-page" target="_blank" class="link-hover">Landing</a>
             <p>A landing page for New Zealand tourism.</p>
         </div>
 
         <div class="project-title">
             <div class="img-container">
-                <img src="http://placekitten.com/300/300">
+                <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/tech-doc"><img src="media/techdoc.png"></a>
             </div>
-            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/tech-doc" target="_blank">Technical Documentation</a>
+            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/tech-doc" target="_blank" class="link-hover">Technical Documentation</a>
             <p>A technical documentation page about Regular Expressions (RegExp). Content from <em>Eloquent Javascript</em>.</p>
         </div>
     
         <div class="project-title">
             <div class="img-container">
-                <img src="http://placekitten.com/300/300">
+                <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/personal-portfolio">
+                <img src="media/tribute.png"></a>
             </div>
-            <a href="#" target="_blank">Portfolio</a>
+            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/personal-portfolio" target="_blank" class="link-hover">Portfolio</a>
             <p>A simple one-page portfolio based on CSS Grid.</p>
-        </div>
-
-        <div class="project-title">
-            <div class="img-container">
-                <img src="http://placekitten.com/300/300">
-            </div>
-            <a href="http://adrianang.github.io/freecodecamp/responsive-web-design/landing-page" target="_blank">A Future Project</a>
-            <p>A project in which I will have the opportunity to practice coding.</p>
         </div>
     </section>
 
@@ -95,7 +91,7 @@
                 <div id="contact-desktop">
                     <h2>Contact Me</h2>
                     <div id="social-network-buttons">
-                        <a href="http://github.com/adrianang" target="_blank" id="profile-link">Github</a>
+                        <a href="http://github.com/adrianang" target="_blank" id="profile-link"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -107,13 +103,14 @@
                     <li>CSS</li>
                     <li>Javascript</li>
                     <li>Adobe Creative Suite</li>
+                    <li>Github</li>
                 </ul>
             </div>
 
             <div id="contact-mobile">
                 <h2>Contact Me</h2>
                 <div id="social-network-buttons">
-                    <a href="http://github.com/adrianang" target="_blank" id="profile-link">Github</a>
+                    <a href="http://github.com/adrianang" target="_blank" id="profile-link"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
